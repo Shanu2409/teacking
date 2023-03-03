@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Teackinggg.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<IssueDbContext>(o => o.UseSqlite("filename=Data/Database/Issue.db"));
 
 var app = builder.Build();
 
